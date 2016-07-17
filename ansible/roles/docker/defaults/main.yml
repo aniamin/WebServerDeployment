@@ -1,0 +1,19 @@
+---
+docker_pkg_name: docker-engine
+docker_defaults_file_path: /etc/default/docker
+apt_key_url: https://apt.dockerproject.org/gpg
+apt_key_sig: 2C52609D
+apt_repository: deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main
+docker_opts: ""
+docker_group_members: []
+pip_version_pip: latest
+pip_version_setuptools: latest
+pip_version_docker_py: latest
+pip_version_docker_compose: latest
+
+update_docker_package: no
+
+kernel_pkg_state: latest
+cgroup_lite_pkg_state: latest
+
+install_xorg_pkgs: false

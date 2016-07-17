@@ -1,0 +1,3 @@
+git_branch_name: 'master'
+git_repo_address: 'https://github.com/aniamin/MyWPBlog.git'
+git_repo_dest: '/var/www/html'

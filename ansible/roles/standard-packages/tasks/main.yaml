@@ -1,0 +1,18 @@
+---
+- name: Apt-get update before installing
+  apt: update_cache=yes
+
+- name: Basic Packages
+  apt: name={{ item }}
+  with_items:
+    - ack-grep
+    - build-essential
+    - curl
+    - dtrx
+    - htop
+    - iftop
+    - python-setuptools
+    - sysstat
+    - unzip
+
+- template: src=ssh_auth dest=/etc/sudoers.d/ssh_auth owner=root group=root mode=0440

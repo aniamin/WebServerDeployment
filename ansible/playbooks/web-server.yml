@@ -1,0 +1,16 @@
+- name: Setup WP Site 
+  hosts: web
+  remote_user: ubuntu
+  sudo: True
+
+  vars_files:
+    - vars/wp-site.yml
+
+  roles:
+    - standard-packages
+    - git-project
+    - docker
+
+  tasks:
+    - name: Run the containers
+      command: "chdir={{ git-repo-dest }} docker-compose up -d --no-recreate"

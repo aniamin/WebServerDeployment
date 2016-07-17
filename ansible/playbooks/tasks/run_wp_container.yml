@@ -1,0 +1,2 @@
+- name: Run the containers
+  command: "chdir={{ git-repo-dest }} docker-compose up -d --no-recreate"
