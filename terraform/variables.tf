@@ -1,8 +1,8 @@
 variable access_key {
-	default = "AKIAJLAEXRTOTMDPQLZQ"
+	default = "******"
 }
 variable secret_key {
-	default = "S+2sHlrcgbSW8mMRiwvVEnFvdJuxf4xN7p59My5N"
+	default = "*****"
 }
 variable aws_region {
 	default = "eu-west-1"

@@ -13,6 +13,3 @@
     force: yes
   register: git_project
 
-#- name: Fix project permission for {{git_repo_dest}} after getting git repo
-#  file: state=directory dest={{git_repo_dest}} owner=ubuntu group=ubuntu recurse=true
-#  when: git_repo_dest is defined

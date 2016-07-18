@@ -75,6 +75,21 @@ module "web" {
 	user_data = "#!/bin/bash\napt-get -y update"
 }
 
+resource "aws_network_interface" "ENI" {
+    subnet_id = "${module.vpc_subnets.public_subnets_id}"
+    attachment {
+        instance = "${module.web.ec2_id}"
+        device_index = 1
+    }
+    source_dest_check = false
+}
+
+resource "aws_eip" "EIP" {
+  instance = "${module.web.ec2_id}"
+  vpc = true
+  network_interface = "${aws_network_interface.ENI.id}"
+}
+
 module "elb" {
 	source = "./modules/elb"
 	name = "elb-nowshad-sre"

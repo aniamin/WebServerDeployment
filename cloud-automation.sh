@@ -113,11 +113,3 @@ terraform apply \
 -var jumpbox_server_size=$JUMPBOX_SERVER_SIZE
 
 ELB_DNS=$(terraform output elb_dns_name)
-
-
-
-
-
-
-
-
